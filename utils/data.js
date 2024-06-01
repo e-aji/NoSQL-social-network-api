@@ -132,7 +132,7 @@ const possibleThoughts = [
     'Just had a great night out! 🍻 #NightLife',
     'Hiking in the mountains is so much fun! 🏔️ #HikerLife',
     'Surprised a friend today and it made my week! 🎉',
-    'A day full of laughter and good vibes. Can’t ask for more! 😊',
+    'A day full of laughter and good vibes. Can\'t ask for more! 😊',
     'Finally tried that new restaurant and it was amazing! 🍽️ #Foodie',
     'Spontaneous road trip adventures are the best! 🚗💨',
     'Feeling the love and positivity today. Spread kindness! 💖',
@@ -163,7 +163,7 @@ const possibleReactions = [
     'Simply brilliant!',
     'Thanks for the positivity!',
     'Always a pleasure to see your posts.',
-    'You’re amazing! Keep shining!',
+    'You\'re amazing! Keep shining!',
     'Love to see you enjoying yourself!',
     'This is so beautiful!',
     'This is pure gold!',
@@ -205,8 +205,13 @@ const possibleReactions = [
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 // Gets a random username
-const getRandomName = () =>
-    `${getRandomArrItem(firstName)} ${getRandomArrItem(lastName)}`;
+const getRandomName = () => {
+
+  const firstName = getRandomArrItem(firstName);
+  const lastName = getRandomArrItem(lastName);
+  
+  return `${firstName} ${lastName}`;
+};
 
 // Function to generate random thoughts that we can add to the database. 
 const getRandomThoughts = (int) => {
