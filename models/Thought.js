@@ -13,7 +13,7 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: createdDate,
+      get: createdDate => new Date(createdDate).toLocaleDateString(),
     },
     username: {
       type: String,
@@ -39,9 +39,5 @@ thoughtSchema
 
 // Initialize our Thought model
 const Thought = model('thought', thoughtSchema);
-
-function createdDate(date) {
-  return date.toString();
-}
 
 module.exports = Thought;
