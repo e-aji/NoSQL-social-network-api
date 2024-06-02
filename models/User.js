@@ -19,9 +19,6 @@ const userSchema = new Schema(
         },
         message: 'Invalid email address format',
       },
-      // match: [/.+@.+\..+/, 'Must match an email address!'],
-      // [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Must match an email address!'],
-
     }, 
     thoughts: [
       {

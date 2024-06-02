@@ -13,13 +13,13 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: (timestamp) => new Date(timestamp),
+      get: createdDate,
     },
     username: {
       type: String,
       required: true,
     },
-    reactions: [reactionSchema],
+    reactions: [reactionSchema]
   },
   {
     toJSON: {
@@ -33,12 +33,15 @@ const thoughtSchema = new Schema(
 // Create a virtual property `reactionCount` that gets the amount of reactions associated with a thought
 thoughtSchema
   .virtual('reactionCount')
-  // Getter
   .get(function () {
     return this.reactions.length;
   });
 
 // Initialize our Thought model
 const Thought = model('thought', thoughtSchema);
+
+function createdDate(date) {
+  return date.toString();
+}
 
 module.exports = Thought;

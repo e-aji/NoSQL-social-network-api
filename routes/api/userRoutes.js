@@ -3,6 +3,7 @@ const {
   getUsers,
   getSingleUser,
   createUser,
+  updateUser,
   deleteUser,
   addFriend,
   deleteFriend,
@@ -12,7 +13,9 @@ const {
 router.route('/').get(getUsers).post(createUser);
 
 // /api/users/:userId
-router.route('/:userId').get(getSingleUser);
+router.route('/:userId')
+  .get(getSingleUser)
+  .put(updateUser);  
 
 // remove a users associated thoughts when deleted 
 // /api/users/:userId

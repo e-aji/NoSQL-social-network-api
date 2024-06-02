@@ -1,6 +1,6 @@
 const connection = require('../config/connection');
 const { User, Thought } = require('../models');
-const { getRandomName, getRandomThoughts, getRandomEmail } = require('./data');
+const { getRandomName, getRandomThoughts, getRandomEmail, getThoughtReactions } = require('./data');
 
 connection.on('error', (err) => err);
 
@@ -27,6 +27,15 @@ connection.once('open', async () => {
         username: getRandomName(),
         email: getRandomEmail(),
         age: Math.floor(Math.random() * (99 - 18 + 1) + 18),
+        });
+    }
+
+    for (let i = 0; i < 10; i++) {
+
+        thoughts.push({
+        thoughtText: getRandomThoughts(1),
+        username: getRandomName(),
+        reactions: getThoughtReactions(3),
         });
     }
 
