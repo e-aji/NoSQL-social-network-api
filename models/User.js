@@ -13,7 +13,15 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true, 
-      match: [/.+@.+\..+/, 'Must match an email address!'],
+      validate: {
+        validator: function (value) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+        },
+        message: 'Invalid email address format',
+      },
+      // match: [/.+@.+\..+/, 'Must match an email address!'],
+      // [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Must match an email address!'],
+
     }, 
     thoughts: [
       {

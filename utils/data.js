@@ -1,3 +1,5 @@
+const { emit } = require("../models/User");
+
 const firstName =  [
     'Alex',
     'Beth',
@@ -118,6 +120,45 @@ const lastName = [
     'Richardson',
 ]
 
+// const emailAddress = [
+
+//   'alice.smith@example.com',
+//   'bob.jones@example.com',
+//   'charlie.brown@example.com',
+//   'dave.davis@example.com',
+//   'eleanor.miller@example.com',
+//   'fay.wilson@example.com',
+//   'gail.moore@example.com',
+//   'hank.taylor@example.com',
+//   'iris.anderson@example.com',
+//   'jill.jones@example.com',
+//   'kate.brown@example.com',
+//   'liz.miller@example.com',
+//   'megan.davis@example.com',
+//   'nancy.miller@example.com',
+//   'olivia.anderson@example.com',
+//   'penny.wilson@example.com',
+//   'quinn.taylor@example.com',
+//   'rory.davis@example.com',
+//   'sally.miller@example.com',
+//   'tara.taylor@example.com',
+//   'ursula.anderson@example.com',
+//   'vivian.miller@example.com',
+//   'wendy.davis@example.com',
+//   'xena.miller@example.com',
+//   'yvonne.taylor@example.com',
+//   'zoe.anderson@example.com',
+//   'diana.prince@techmail.org',
+//   'elizabeth.prince@techmail.org',
+//   'frank.prince@techmail.org',
+//   'george.prince@techmail.org',
+//   'harry.prince@techmail.org',
+//   'irving.prince@techmail.org',
+//   'james.prince@techmail.org',
+//   'kenneth.prince@techmail.org',
+//   'larry.prince@techmail.org',
+//   'michael.prince@techmail.org',
+// ];
 const possibleThoughts = [
     'Had a great day with my friends after such a long time!',
     'Nothing beats a sunny day at the beach! 🏖️',
@@ -209,8 +250,15 @@ const getRandomName = () => {
 
   const firstName = getRandomArrItem(firstName);
   const lastName = getRandomArrItem(lastName);
-  
+
   return `${firstName} ${lastName}`;
+};
+
+const getRandomEmail = () => {
+  const name = getRandomAName();
+  const [firstName, lastName] = name.split(' ');
+
+  return `${firstName.toLowerCase()}.${lastName.toLowerCase()}@example.com`;
 };
 
 // Function to generate random thoughts that we can add to the database. 
@@ -222,6 +270,7 @@ const getRandomThoughts = (int) => {
       thoughtText: getRandomArrItem(possibleThoughts),
       reaction: [...getThoughtReactions(3)],
       username: getRandomName(),
+      emit
     });
   }
   return results;
@@ -243,5 +292,5 @@ const getThoughtReactions = (int) => {
 };
 
 // Export the functions for use in seed.js
-module.exports = { getRandomName, getRandomThoughts };
+module.exports = { getRandomName, getRandomThoughts, getRandomEmail };
 
