@@ -36,7 +36,7 @@ The aim of this project is to create an API for a social networking platform. Th
 
 ## Usage 
 
-* Run npm run seed and then npm run start into the terminal. 
+* Run npm run seed and then npm run start into the terminal to populate the seed data and start running the server. 
 * Once the server starts running, begin testing the http request (http://localhost:3001) with each corresponding route for the API endpoint in Postman. 
 * Routes include: GET, POST, PUT, DELETE.  
 
