@@ -56,12 +56,13 @@ The aim of this project is to create an API for a social networking platform. Th
 
 **Screenshot showing output when getting all thoughts**
 
-![Get All Thoughts](https://github.com/e-aji/NoSQL-social-network-api/assets/156595423/505681c5-8d7d-4b14-b271-133cb7612de0)
+![Get All Thoughts](https://github.com/e-aji/NoSQL-social-network-api/assets/156595423/6c9009ee-a76e-482b-b01c-5f6e12dc1ab9)
 
 
 **Screenshot showing output when adding a new friend** 
 
 ![Adding a Friend Functionality](https://github.com/e-aji/NoSQL-social-network-api/assets/156595423/17b4c460-4817-4d08-9d47-7c1c2d802414)
+
 
 **Screenshot showing output when adding a new reaction** 
 
